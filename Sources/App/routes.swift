@@ -1,11 +1,7 @@
 import Vapor
 
-func routes(_ app: Application) throws {
-    app.get { req in
-        return "TEST GBSHOP VAPOR SERVER."
-    }
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
-    }
+func routes(_ app: Application) throws {
+    let controller = AuthController()
+    app.post("register", use: controller.register)
 }
