@@ -7,15 +7,16 @@
 
 import Vapor
 
-class AuthController {
-    func register(_ req: Request) throws -> EventLoopFuture<RegisterResponse> {
-        guard let body = try? req.content.decode(RegisterRequest.self) else {
+class UserController {
+    func register(_ req: Request) throws -> EventLoopFuture<DefaultResponse> {
+        //print(req.description)
+        guard let body = try? req.content.decode(User.self) else {
             throw Abort(.badRequest)
         }
         
         print(body)
         
-        let response = RegisterResponse(
+        let response = DefaultResponse(
             result: 1,
             user_message: "Регистрация прошла успешно!",
             error_message: nil
