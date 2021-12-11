@@ -1,13 +1,13 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    let controller = UserController()
+    let userController = UserController()
     
     app.get { _ in return gbshopLogo }
-    app.post("auth", use: controller.auth)
-    app.post("logout", use: controller.logout)
-    app.post("signup", use: controller.signup)
-    app.post("changeuserdata", use: controller.changeUserData)
+    app.post("auth", use: userController.auth)
+    app.post("logout", use: userController.logout)
+    app.post("signup", use: userController.signup)
+    app.post("changeuserdata", use: userController.changeUserData)
 }
 
 
