@@ -10,6 +10,7 @@ func routes(_ app: Application) throws {
     app.post("signup", use: userController.signup)
     app.post("changeuserdata", use: userController.changeUserData)
     app.post("getcatalog", use: itemsController.getCatalog)
+    app.post("getgood", use: itemsController.getGood)
 }
 
 
