@@ -5,6 +5,7 @@ func routes(_ app: Application) throws {
     
     app.get { _ in return gbshopLogo }
     app.post("signup", use: controller.signup)
+    app.post("changeuserdata", use: controller.changeUserData)
 }
 
 
