@@ -4,6 +4,8 @@ func routes(_ app: Application) throws {
     let controller = UserController()
     
     app.get { _ in return gbshopLogo }
+    app.post("auth", use: controller.auth)
+    app.post("logout", use: controller.logout)
     app.post("signup", use: controller.signup)
     app.post("changeuserdata", use: controller.changeUserData)
 }
