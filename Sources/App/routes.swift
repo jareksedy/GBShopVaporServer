@@ -4,6 +4,7 @@ func routes(_ app: Application) throws {
     let userController = UserController()
     let itemsController = ItemsController()
     let reviewsController = ReviewsController()
+    let cartController = CartController()
     
     app.get { _ in return gbshopLogo }
     app.post("auth", use: userController.auth)
@@ -15,6 +16,10 @@ func routes(_ app: Application) throws {
     app.post("getreviews", use: reviewsController.getReviews)
     app.post("addreview", use: reviewsController.addReview)
     app.post("removereview", use: reviewsController.removeReview)
+    app.post("getcart", use: cartController.getCart)
+    app.post("paycart", use: cartController.payCart)
+    app.post("addtocart", use: cartController.addToCart)
+    app.post("deletefromcart", use: cartController.deleteFromCart)
 }
 
 
