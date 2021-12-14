@@ -10,7 +10,7 @@ import Vapor
 struct Cart: Content {
     var amount: Int?
     var count: Int?
-    var contents: CartContents
+    var contents: [CartContents]
 }
 
 struct CartContents: Content {
