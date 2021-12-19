@@ -14,9 +14,9 @@ class UserController {
         print(body)
         
         let response = DefaultResponse(
-            result: -1,
-            successMessage: nil,
-            errorMessage: "Вы совершили большую ашипку!."
+            result: 1,
+            successMessage: "Пользователь успешно зарегистрирован.",
+            errorMessage: nil
         )
         
         return req.eventLoop.future(response)
