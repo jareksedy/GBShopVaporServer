@@ -83,6 +83,10 @@ class UserController {
 
 extension String {
     var isValidEmail: Bool {
-        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+        guard !self.lowercased().hasPrefix("mailto:") else { return false }
+        guard let emailDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else { return false }
+        let matches = emailDetector.matches(in: self, options: NSRegularExpression.MatchingOptions.anchored, range: NSRange(location: 0, length: self.count))
+        guard matches.count == 1 else { return false }
+        return matches[0].url?.scheme == "mailto"
     }
 }
