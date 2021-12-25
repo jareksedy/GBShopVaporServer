@@ -14,9 +14,9 @@ class ItemsController {
         print(body)
         
         let response = [
-        CatalogResponse(productId: 242, productName: "Эппл мэджик мышъ", price: 100500),
-        CatalogResponse(productId: 243, productName: "Эппл ойфонъ", price: 100600),
-        CatalogResponse(productId: 244, productName: "Эппл ойпадъ", price: 100666)
+        CatalogResponse(productId: 242, productName: "Эппл мэджик мышъ", price: 100500, shortDescription: nil, picUrl: nil),
+        CatalogResponse(productId: 243, productName: "Эппл ойфонъ", price: 100600, shortDescription: nil, picUrl: nil),
+        CatalogResponse(productId: 244, productName: "Эппл ойпадъ", price: 100666, shortDescription: nil, picUrl: nil)
         ]
         
         return req.eventLoop.future(response)
